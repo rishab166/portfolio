@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nike Brand Strategy & Sponsorship — Rishab Saini</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --dark:#0a0a0a;
+  --gray:#f4f4f4;
+  --mid:#888;
+  --dim:#444;
+  --r:#e8002d;
+  --rg:rgba(232,0,45,0.06);
+  --b:rgba(0,0,0,0.08);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-serif;font-weight:300;line-height:1.6;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);}
+.n-back{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mid);transition:color .18s;display:flex;align-items:center;gap:7px;}
+.n-back:hover{color:var(--dark);}
+.n-title{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);}
+.n-badge{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;background:var(--dark);color:#fff;}
+
+/* HERO */
+.cs-hero{
+  min-height:88vh;background:var(--dark);
+  display:flex;align-items:flex-end;
+  padding:52px 0 0;position:relative;overflow:hidden;
+}
+.cs-hero-bg{position:absolute;inset:0;z-index:0;}
+.cs-hero-bg::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.025) 79px,rgba(255,255,255,.025) 80px),
+             repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.025) 79px,rgba(255,255,255,.025) 80px);
+}
+.cs-hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,0,45,.12) 0%,transparent 70%);bottom:-200px;right:-100px;z-index:0;}
+.cs-hero-content{position:relative;z-index:2;padding:80px 80px 72px;max-width:900px;}
+.cs-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:24px;}
+.cs-eyebrow span{color:var(--r);}
+.cs-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(60px,8vw,120px);line-height:.88;letter-spacing:.01em;color:#fff;margin-bottom:20px;}
+.cs-title em{color:var(--r);font-style:normal;}
+.cs-subtitle{font-size:16px;color:rgba(255,255,255,.55);font-weight:300;max-width:560px;line-height:1.72;border-left:2px solid var(--r);padding-left:16px;}
+.cs-meta{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);}
+.cs-meta-item{}
+.cs-meta-label{font-family:"DM Mono",monospace;font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px;}
+.cs-meta-value{font-size:13px;color:rgba(255,255,255,.75);font-weight:400;}
+
+/* OVERVIEW STRIP */
+.overview-strip{background:var(--r);padding:20px 80px;display:flex;gap:48px;align-items:center;}
+.ov-stat{text-align:center;}
+.ov-num{font-family:"Bebas Neue",sans-serif;font-size:36px;color:#fff;line-height:1;letter-spacing:.04em;}
+.ov-lbl{font-family:"DM Mono",monospace;font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:2px;}
+.ov-sep{width:1px;height:40px;background:rgba(255,255,255,.2);}
+
+/* CONTENT */
+.cs-body{max-width:1100px;margin:0 auto;padding:0 80px;}
+
+/* SECTION */
+.cs-section{padding:72px 0;border-bottom:1px solid var(--b);}
+.cs-section:last-child{border-bottom:none;}
+.sec-tag{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--r);margin-bottom:8px;}
+.sec-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(36px,4vw,56px);letter-spacing:.02em;line-height:.93;margin-bottom:24px;}
+.sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:16px;align-items:start;}
+.sec-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:24px;}
+
+/* PROSE */
+p.body-text{font-size:14px;line-height:1.88;color:var(--dim);margin-bottom:14px;}
+p.body-text strong{color:var(--dark);font-weight:500;}
+
+/* INSIGHT CARD */
+.insight-card{background:var(--gray);padding:28px 24px;position:relative;overflow:hidden;}
+.insight-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--r);}
+.insight-label{font-family:"DM Mono",monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--r);margin-bottom:8px;}
+.insight-text{font-size:13px;color:var(--dim);line-height:1.65;}
+.insight-text strong{color:var(--dark);font-weight:500;}
+
+/* PULL QUOTE */
+.pull-quote{background:var(--dark);color:#fff;padding:40px 44px;margin:32px 0;position:relative;overflow:hidden;}
+.pull-quote::before{content:'"';font-family:"Bebas Neue",sans-serif;font-size:180px;color:rgba(232,0,45,.12);position:absolute;top:-20px;left:20px;line-height:1;}
+.pull-quote p{font-size:20px;font-weight:300;line-height:1.6;position:relative;z-index:1;font-style:italic;}
+.pull-quote cite{display:block;margin-top:16px;font-family:"DM Mono",monospace;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);font-style:normal;position:relative;z-index:1;}
+
+/* METRIC CARDS */
+.metric-card{border:1px solid var(--b);padding:28px 24px;transition:border-color .2s,background .2s;}
+.metric-card:hover{border-color:rgba(232,0,45,.2);background:var(--rg);}
+.metric-num{font-family:"Bebas Neue",sans-serif;font-size:44px;letter-spacing:.02em;color:var(--r);line-height:1;}
+.metric-label{font-size:12px;color:var(--mid);line-height:1.5;margin-top:6px;}
+
+/* STRATEGY STEPS */
+.strategy-list{display:flex;flex-direction:column;gap:2px;margin-top:16px;}
+.strategy-item{display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;background:var(--gray);padding:22px 24px;transition:background .2s;}
+.strategy-item:hover{background:#eee;}
+.strategy-num{font-family:"Bebas Neue",sans-serif;font-size:32px;color:var(--r);line-height:1;}
+.strategy-content{}
+.strategy-title{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:4px;}
+.strategy-desc{font-size:12px;color:var(--mid);line-height:1.62;}
+
+/* ASSET TABLE */
+.asset-table{width:100%;border-collapse:collapse;margin-top:16px;}
+.asset-table th{font-family:"DM Mono",monospace;font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);padding:10px 14px;text-align:left;border-bottom:2px solid var(--dark);}
+.asset-table td{font-size:12px;color:var(--dim);padding:12px 14px;border-bottom:1px solid var(--b);vertical-align:top;}
+.asset-table td:first-child{font-weight:500;color:var(--dark);}
+.asset-table tr:hover td{background:var(--gray);}
+.tag{display:inline-block;font-family:"DM Mono",monospace;font-size:7px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--b);color:var(--mid);}
+.tag.high{border-color:var(--r);color:var(--r);background:var(--rg);}
+
+/* ROI SECTION */
+.roi-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:24px;}
+.roi-card{background:var(--dark);padding:28px 22px;text-align:center;}
+.roi-num{font-family:"Bebas Neue",sans-serif;font-size:42px;color:var(--r);line-height:1;letter-spacing:.03em;}
+.roi-label{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;}
+
+/* FINDINGS */
+.finding-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:24px;}
+.finding{background:var(--gray);padding:24px 22px;border-left:3px solid transparent;transition:border-color .2s;}
+.finding:hover{border-color:var(--r);}
+.finding-n{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.2em;color:var(--r);margin-bottom:8px;}
+.finding-t{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:6px;}
+.finding-d{font-size:12px;color:var(--mid);line-height:1.62;}
+
+/* CONCLUSION */
+.conclusion{background:var(--dark);padding:64px 80px;margin-top:0;}
+.conclusion .sec-title{color:#fff;}
+.conclusion p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.82;max-width:700px;margin-bottom:14px;}
+.conclusion p strong{color:#fff;}
+.conclusion-cta{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;background:var(--r);color:#fff;padding:13px 24px;transition:opacity .18s;}
+.conclusion-cta:hover{opacity:.86;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .cs-hero-content{padding:72px 24px 56px;}
+  .overview-strip{padding:20px 24px;flex-wrap:wrap;gap:24px;}
+  .cs-body{padding:0 24px;}
+  .sec-grid,.sec-grid-3,.finding-grid,.roi-grid{grid-template-columns:1fr;}
+  .conclusion{padding:48px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="rishab-saini-final-2.html" class="n-back">← Back to Portfolio</a>
+  <div class="n-title">Case Study 01</div>
+  <div class="n-badge">Nike</div>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-hero-bg"></div>
+  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-content">
+    <div class="cs-eyebrow"><span>Case Study 01</span> &nbsp;·&nbsp; Full Sail University &nbsp;·&nbsp; 2024–2025</div>
+    <h1 class="cs-title">NIKE<br>BRAND <em>STRATEGY</em><br>&amp; SPONSORSHIP</h1>
+    <p class="cs-subtitle">A comprehensive analysis of Nike's global brand architecture, sponsorship model, supply chain strategy, and commercial opportunity in the cricket market — with a full sponsorship activation proposal.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item"><div class="cs-meta-label">Author</div><div class="cs-meta-value">Rishab Saini</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Institution</div><div class="cs-meta-value">Full Sail University</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Program</div><div class="cs-meta-value">MS Entertainment Business & Sports Management</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Focus</div><div class="cs-meta-value">Brand Audit · Sponsorship · Supply Chain · Market Expansion</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW STRIP -->
+<div class="overview-strip">
+  <div class="ov-stat"><div class="ov-num">$51B+</div><div class="ov-lbl">Nike Annual Revenue</div></div>
+  <div class="ov-sep"></div>
+  <div class="ov-stat"><div class="ov-num">2.5B</div><div class="ov-lbl">Global Cricket Fans</div></div>
+  <div class="ov-sep"></div>
+  <div class="ov-stat"><div class="ov-num">0%</div><div class="ov-lbl">Nike Cricket Market Share</div></div>
+  <div class="ov-sep"></div>
+  <div class="ov-stat"><div class="ov-num">$500K</div><div class="ov-lbl">Proposed Activation Budget</div></div>
+  <div class="ov-sep"></div>
+  <div class="ov-stat"><div class="ov-num">50M+</div><div class="ov-lbl">Projected Impressions</div></div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="cs-section">
+    <p class="sec-tag rv">Executive Summary</p>
+    <h2 class="sec-title rv">The World's Most<br>Powerful Sports Brand<br>Has a Blind Spot.</h2>
+    <div class="sec-grid">
+      <div>
+        <p class="body-text rv">Nike is the most recognized sports brand on earth — with a Swoosh that needs no text, a slogan embedded in global culture, and a revenue base that towers above every competitor. <strong>But Nike is almost entirely absent from cricket</strong> — a sport with 2.5 billion fans, a rapidly growing commercial ecosystem, and a South Asian consumer base that represents one of the world's fastest-growing middle classes.</p>
+        <p class="body-text rv">This case study examines Nike's brand architecture, sponsorship model, and supply chain strategy through original research, then presents a strategic market entry recommendation for cricket — identifying where Nike's brand power meets its most significant untapped commercial opportunity.</p>
+        <p class="body-text rv">As a 15-year competitive cricketer and sports business professional, I bring both the academic framework and the lived experience to make this analysis credible — understanding cricket's commercial landscape from the inside out.</p>
+      </div>
+      <div>
+        <div class="pull-quote rv d1">
+          <p>"Nike's brand is focused on motivating aspiring people to reach their goals and overcome their limits — all people, regardless of background, can be considered athletes and become great."</p>
+          <cite>Nike Brand Research — Rishab Saini, Full Sail University 2024</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND AUDIT -->
+  <div class="cs-section">
+    <p class="sec-tag rv">Section 01 — Brand Audit</p>
+    <h2 class="sec-title rv">Anatomy of<br>the Nike Brand.</h2>
+    <div class="sec-grid">
+      <div>
+        <p class="body-text rv">Nike's brand architecture is built on three pillars that have remained consistent for over 50 years — yet continue to evolve with culture. The Swoosh, "Just Do It," and the athlete-as-hero storytelling framework create a brand ecosystem that transcends product categories.</p>
+        <p class="body-text rv"><strong>The Swoosh</strong> — designed in 1971 — has evolved to stand completely alone, without any supporting text. This is the ultimate mark of brand confidence: a visual identity so deeply embedded in consumer consciousness that it needs zero explanation across 190 countries.</p>
+        <p class="body-text rv">Nike's digital ecosystem reinforces brand loyalty at every touchpoint — Nike.com, the Nike App, Nike Training Club, and Nike Run Club collectively form a community platform that keeps customers engaged between purchases, creating habitual brand interaction that no competitor has replicated at scale.</p>
+      </div>
+      <div class="rv d2">
+        <div class="sec-grid-3" style="grid-template-columns:1fr;gap:2px;">
+          <div class="insight-card">
+            <div class="insight-label">Brand Identity</div>
+            <div class="insight-text">The Swoosh stands alone in 190+ countries — no text, no explanation needed. <strong>The ultimate measure of brand equity.</strong></div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-label">Brand Message</div>
+            <div class="insight-text">"Just Do It" — every person is an athlete. Not a product promise but <strong>a universal invitation to ambition.</strong></div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-label">Community Model</div>
+            <div class="insight-text">Nike Run Club + Training Club create habitual brand interaction. <strong>40%+ increase in user engagement time</strong> through personalized digital experiences.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-label">Cause Branding</div>
+            <div class="insight-text">Kaepernick. Move to Zero. Girls on the Run. Nike aligns with <strong>cultural moments that matter</strong> — even when controversial.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="finding-grid">
+      <div class="finding rv"><div class="finding-n">Finding 01 —</div><div class="finding-t">Nike's Personalization Model Drives Loyalty</div><div class="finding-d">NIKEiD customization, in-store experience, and app-driven recommendations create an emotional ownership bond competitors can't replicate with product alone.</div></div>
+      <div class="finding rv d1"><div class="finding-n">Finding 02 —</div><div class="finding-t">Co-Branding Elevates Cultural Relevance</div><div class="finding-d">Nike x Off-White and Nike x Sacai prove that strategic collaborations with cultural figures transform athletic products into collectible cultural artifacts.</div></div>
+      <div class="finding rv d2"><div class="finding-n">Finding 03 —</div><div class="finding-t">Staff Culture Mirrors Brand Values</div><div class="finding-d">Nike employees are trained to be sports-passionate and customer-centric — the brand experience extends beyond advertising into every human interaction.</div></div>
+      <div class="finding rv d3"><div class="finding-n">Finding 04 —</div><div class="finding-t">Digital Ecosystem Creates Habitual Engagement</div><div class="finding-d">Nike's app suite moves the brand from transactional to relational — consumers interact with Nike daily, not just at point of purchase.</div></div>
+    </div>
+  </div>
+
+  <!-- SUPPLY CHAIN -->
+  <div class="cs-section">
+    <p class="sec-tag rv">Section 02 — Supply Chain Analysis</p>
+    <h2 class="sec-title rv">From Mass Production<br>to Customer-Centric<br>Speed.</h2>
+    <div class="sec-grid">
+      <div>
+        <p class="body-text rv">Nike's supply chain transformation represents one of the most significant competitive advantages in global sports retail. While traditional sports retailers remain locked into demand forecasting, long production cycles, and intermediary dependency — Nike has built a real-time, data-driven supply chain that responds to consumer behavior as it happens.</p>
+        <p class="body-text rv"><strong>The Direct-to-Consumer (DTC) shift</strong> is the backbone of Nike's supply chain advantage. By reducing reliance on wholesale intermediaries and investing heavily in digital infrastructure, Nike has shortened the path between production decision and customer delivery — collecting rich behavioral data at every step.</p>
+        <p class="body-text rv">This matters commercially: Nike can observe a trend emerging in real-time across its digital platforms and adjust production volumes within weeks rather than seasons. For a $51B company operating across hundreds of product lines, this responsiveness is extraordinary.</p>
+      </div>
+      <div class="rv d2">
+        <table class="asset-table">
+          <thead>
+            <tr><th>Dimension</th><th>Traditional Model</th><th>Nike Model</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Primary Focus</td><td>Cost efficiency</td><td>Customer responsiveness</td></tr>
+            <tr><td>Production</td><td>Mass forecasting</td><td>Real-time data driven</td></tr>
+            <tr><td>Speed</td><td>Seasonal cycles</td><td>Weeks to market</td></tr>
+            <tr><td>Personalization</td><td>Standard SKUs</td><td>Custom product options</td></tr>
+            <tr><td>Customer Data</td><td>Minimal</td><td>Rich behavioral analytics</td></tr>
+            <tr><td>Intermediaries</td><td>Multiple layers</td><td>Direct to consumer</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pull-quote rv">
+      <p>"Nike's supply chain is designed to respond quickly to real-time data — adjusting production based on current demand trends, reducing excess inventory and improving customer satisfaction through personalization options that enhance engagement and brand loyalty."</p>
+      <cite>Supply Chain Analysis — Rishab Saini, Goldey-Beacom College 2026</cite>
+    </div>
+  </div>
+
+  <!-- SPONSORSHIP STRATEGY -->
+  <div class="cs-section">
+    <p class="sec-tag rv">Section 03 — Sponsorship Model</p>
+    <h2 class="sec-title rv">How Nike Builds<br>Commercial Dominance<br>Through Sport.</h2>
+    <p class="body-text rv" style="max-width:680px;">Nike's sponsorship model is not transactional — it is relational. Rather than simply placing logos on athletes and arenas, Nike identifies cultural moments, builds human stories around them, and uses those stories to make the brand feel essential rather than commercial. This is the framework behind every major Nike campaign — and it applies directly to cricket.</p>
+
+    <div class="strategy-list rv">
+      <div class="strategy-item">
+        <div class="strategy-num">01</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Athlete-as-Hero Framework</div>
+          <div class="strategy-desc">Nike doesn't sponsor athletes — it builds them into cultural figures. LeBron, Serena, Kaepernick. Every partnership is a storytelling opportunity, not a logo placement. Applied to cricket: Kohli, Bumrah, Stokes become Nike's cricket heroes.</div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num">02</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Cultural Moment Alignment</div>
+          <div class="strategy-desc">Nike aligns with moments that create conversation — Kaepernick's "Believe in Something" campaign was polarizing but generated $6B in earned media. Cricket's global growth is Nike's equivalent cultural moment to own.</div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num">03</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Community Platform Integration</div>
+          <div class="strategy-desc">Every Nike sponsorship feeds the digital community ecosystem. Sponsored athletes appear in Nike Run Club, Training Club, and App content — turning commercial partnerships into daily touchpoints with consumers.</div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num">04</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Performance + Lifestyle Bridge</div>
+          <div class="strategy-desc">Nike doesn't just sell performance gear — it sells the aspiration of performance. Sponsorship activations bridge elite sport and everyday consumer lifestyle, making Nike relevant to the fan who will never play professionally.</div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num">05</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Co-Branding for Cultural Elevation</div>
+          <div class="strategy-desc">Nike x Off-White, Nike x Sacai, Nike x Drake (NOCTA) — these collaborations make Nike a cultural currency, not just a sports brand. Cricket offers Nike an entirely new cultural geography to colonize through collaboration.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRICKET MARKET OPPORTUNITY -->
+  <div class="cs-section">
+    <p class="sec-tag rv">Section 04 — Market Opportunity</p>
+    <h2 class="sec-title rv">The Biggest White<br>Space in Global<br>Sports Business.</h2>
+    <div class="sec-grid">
+      <div>
+        <p class="body-text rv">Cricket is the world's second-largest sport by fan base — 2.5 billion followers across South Asia, the UK, Australia, the Caribbean, and an increasingly global diaspora. The Indian Premier League alone generates $10B+ in annual brand value. The ICC T20 World Cup reaches audiences that rival the FIFA World Cup in South Asian markets.</p>
+        <p class="body-text rv"><strong>Yet Nike has virtually zero presence in cricket</strong> — no cricket-specific footwear line, no ICC partnership, no cricket athlete endorsements at scale. This is the single largest untapped commercial opportunity for a brand with Nike's global infrastructure.</p>
+        <p class="body-text rv">As someone who played at the highest amateur level of cricket — Red Bull Campus Cricket All India Champion 2020, representing Punjab State — I understand not just the commercial opportunity but the cultural entry points that would make Nike's cricket expansion authentic rather than exploitative.</p>
+      </div>
+      <div class="rv d2">
+        <div class="sec-grid-3" style="grid-template-columns:1fr;gap:2px;">
+          <div class="metric-card"><div class="metric-num">2.5B</div><div class="metric-label">Global cricket fans — second only to football. Nike's primary sports (basketball, running, soccer) combined reach fewer fans in South Asia.</div></div>
+          <div class="metric-card"><div class="metric-num">$10B+</div><div class="metric-label">IPL brand value annually. The fastest-growing sports league on earth — Nike is absent from all of it.</div></div>
+          <div class="metric-card"><div class="metric-num">1.4B</div><div class="metric-label">Indian population — the primary cricket market. The world's fastest-growing major economy and consumer base.</div></div>
+          <div class="metric-card"><div class="metric-num">0</div><div class="metric-label">Nike cricket-specific product lines. The gap between Nike's market power and its cricket presence is extraordinary.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPONSORSHIP PROPOSAL -->
+  <div class="cs-section">
+    <p class="sec-tag rv">Section 05 — Sponsorship Proposal</p>
+    <h2 class="sec-title rv">Nike Cricket:<br>A Market Entry<br>Activation Strategy.</h2>
+    <p class="body-text rv" style="max-width:680px;">The following sponsorship framework is adapted from original academic research completed at Full Sail University — reimagined as a Nike cricket market entry proposal rather than the original Miami Heat assignment. The commercial logic, activation architecture, and ROI model are directly applicable.</p>
+
+    <div class="sec-grid-3">
+      <div class="insight-card rv">
+        <div class="insight-label">Objective 01</div>
+        <div class="insight-text"><strong>Brand Awareness</strong> — Establish Nike as a cricket brand across South Asia and the global cricket diaspora through ICC and IPL partnership platforms.</div>
+      </div>
+      <div class="insight-card rv d1">
+        <div class="insight-label">Objective 02</div>
+        <div class="insight-text"><strong>Product Market Entry</strong> — Launch Nike cricket-specific footwear and apparel, positioning the line as the premium performance standard for elite cricketers.</div>
+      </div>
+      <div class="insight-card rv d2">
+        <div class="insight-label">Objective 03</div>
+        <div class="insight-text"><strong>Athlete Endorsement</strong> — Sign 2–3 elite cricket stars as Nike brand ambassadors, building the athlete-as-hero storytelling framework Nike uses in every other sport.</div>
+      </div>
+      <div class="insight-card rv">
+        <div class="insight-label">Objective 04</div>
+        <div class="insight-text"><strong>Fan Community</strong> — Integrate cricket into the Nike Run Club / Training Club ecosystem, creating daily digital touchpoints with 2.5 billion potential users.</div>
+      </div>
+      <div class="insight-card rv d1">
+        <div class="insight-label">Objective 05</div>
+        <div class="insight-text"><strong>Retail Expansion</strong> — Drive product sales through Nike.com, Nike App, and retail partnerships in India, UK, Australia, and the Caribbean cricket markets.</div>
+      </div>
+      <div class="insight-card rv d2">
+        <div class="insight-label">Objective 06</div>
+        <div class="insight-text"><strong>Cultural Authority</strong> — Position Nike as the brand that truly understands cricket culture — not a Western brand entering a foreign sport but a global sports brand claiming its rightful territory.</div>
+      </div>
+    </div>
+
+    <!-- Salable Assets -->
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.04em;margin:40px 0 0;" class="rv">Activation Assets</h3>
+    <table class="asset-table rv">
+      <thead>
+        <tr><th>Asset</th><th>Description</th><th>Value Tier</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ICC Tournament Naming Rights</td><td>Nike-branded tournament boundaries, stumps, and player kit during ICC events</td><td><span class="tag high">Premium</span></td></tr>
+        <tr><td>Athlete Endorsements</td><td>2–3 elite cricket stars as Nike brand ambassadors — social, broadcast, editorial</td><td><span class="tag high">Premium</span></td></tr>
+        <tr><td>Nike Cricket App Integration</td><td>Cricket-specific training content in Nike Training Club — bowler workouts, batting drills</td><td><span class="tag high">Premium</span></td></tr>
+        <tr><td>IPL Team Kit Partnership</td><td>Official footwear/apparel supplier to 2–3 IPL franchises with logo placement</td><td><span class="tag high">Premium</span></td></tr>
+        <tr><td>Digital Content Series</td><td>"Cricket Just Do It" — athlete documentary series across YouTube, Instagram, and Nike platforms</td><td><span class="tag">Standard</span></td></tr>
+        <tr><td>Grassroots Academy Program</td><td>Nike-branded cricket academies in India — connecting youth players to the Nike ecosystem early</td><td><span class="tag">Standard</span></td></tr>
+        <tr><td>Product Sampling at Live Events</td><td>Nike cricket footwear demo zones at major international matches</td><td><span class="tag">Standard</span></td></tr>
+        <tr><td>Co-Branded Merchandise</td><td>Limited edition Nike x ICC cricket collections — apparel that bridges sport and streetwear</td><td><span class="tag">Standard</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ROI -->
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.04em;margin:40px 0 0;" class="rv">Projected ROI — Phase 1 Activation</h3>
+    <div class="roi-grid rv">
+      <div class="roi-card"><div class="roi-num">50M+</div><div class="roi-label">Media Impressions<br>across broadcast, streaming & social</div></div>
+      <div class="roi-card"><div class="roi-num">15%</div><div class="roi-label">Projected Sales Lift<br>in South Asian markets Year 1</div></div>
+      <div class="roi-card"><div class="roi-num">100K+</div><div class="roi-label">New Social Interactions<br>through co-branded cricket content</div></div>
+    </div>
+  </div>
+
+  <!-- BEST PRACTICES -->
+  <div class="cs-section">
+    <p class="sec-tag rv">Section 06 — Best Practices Applied</p>
+    <h2 class="sec-title rv">What Nike's<br>Playbook Teaches<br>Sports Business.</h2>
+    <p class="body-text rv" style="max-width:680px;">From the Sports Marketing Best Practices research completed at Full Sail University, three Nike-aligned principles emerge as universally applicable to any sports commercial strategy.</p>
+    <div class="strategy-list rv">
+      <div class="strategy-item">
+        <div class="strategy-num">01</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Personalized Fan Engagement Through Data</div>
+          <div class="strategy-desc">The NBA saw 40%+ engagement increases by personalizing digital experiences. Nike's app ecosystem applies this at brand scale — serving the right content to the right fan at the right moment. Cricket's digital infrastructure is ready for this approach, particularly through IPL's growing app audience.</div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num">02</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Strategic Sponsor Integration for Brand Synergy</div>
+          <div class="strategy-desc">Red Bull x Oracle turned F1 race analytics into sponsored broadcast segments — the integration felt organic and added value to the viewer experience. Nike x Cricket should follow the same logic: activations that enhance the sport's experience rather than interrupting it.</div>
+        </div>
+      </div>
+      <div class="strategy-item">
+        <div class="strategy-num">03</div>
+        <div class="strategy-content">
+          <div class="strategy-title">Community-Driven Grassroots Involvement</div>
+          <div class="strategy-desc">Adidas' "She Breaks Barriers" and the Bucks' "Hoops for Troops" demonstrated that community-anchored campaigns generate brand sentiment that advertising cannot buy. Nike's cricket entry must include grassroots academy investment — meeting the sport at the ground level, not just the elite level.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CONCLUSION -->
+<div class="conclusion">
+  <p class="sec-tag" style="color:rgba(255,255,255,.35);">Conclusion</p>
+  <h2 class="sec-title">Nike + Cricket.<br>The Inevitable<br>Partnership.</h2>
+  <p>Nike is the world's most powerful sports brand. Cricket is the world's most commercially underserved major sport. The convergence of these two facts represents <strong>the single largest sponsorship opportunity in global sports right now.</strong></p>
+  <p>This research demonstrates that Nike has the brand architecture, the digital infrastructure, the sponsorship expertise, and the community platform to enter cricket with authority. What it lacks is the conviction that cricket is worth pursuing — a conviction that requires someone who understands the sport's cultural depth, commercial trajectory, and authentic entry points.</p>
+  <p>As a 15-year competitive cricketer, Red Bull India Champion, and sports business professional with an MBA in Business Analytics, <strong>I understand this opportunity from both sides of the boundary.</strong> That combination — lived experience plus commercial strategy — is what makes this analysis more than academic.</p>
+  <a href="mailto:Rishab102023@gmail.com" class="conclusion-cta">Discuss This Strategy &rarr;</a>
+</div>
+
+<!-- FOOTER -->
+<div style="padding:20px 80px;border-top:1px solid var(--b);display:flex;justify-content:space-between;align-items:center;">
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Rishab Saini &middot; Sports Business Professional &middot; rishabsaini.com</div>
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Case Study 01 of 06 &middot; Nike Brand Strategy & Sponsorship</div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");obs.unobserve(x.target);}});},{threshold:0.06});
+document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

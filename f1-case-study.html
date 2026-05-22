@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F1 Market Research — Rishab Saini</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--dark:#080808;--gray:#f3f3f3;--mid:#888;--dim:#444;--r:#e8002d;--rg:rgba(232,0,45,0.06);--b:rgba(0,0,0,0.08);--silver:#c0c0c0;--gold:#d4a843;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-serif;font-weight:300;line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);}
+.n-back{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mid);transition:color .18s;display:flex;align-items:center;gap:7px;}
+.n-back:hover{color:var(--dark);}
+.n-title{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);}
+.n-badge{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;background:var(--dark);color:#fff;}
+
+.cs-hero{min-height:90vh;background:var(--dark);display:flex;align-items:flex-end;padding-top:52px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.018) 79px,rgba(255,255,255,.018) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.018) 79px,rgba(255,255,255,.018) 80px);}
+.hero-telemetry{position:absolute;bottom:0;left:0;right:0;height:120px;z-index:1;}
+.hero-glow{position:absolute;width:700px;height:400px;background:radial-gradient(ellipse,rgba(232,0,45,.14) 0%,transparent 70%);bottom:-100px;right:-100px;z-index:0;}
+.cs-hero-content{position:relative;z-index:2;padding:80px 80px 64px;max-width:960px;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:22px;}
+.eyebrow span{color:var(--r);}
+.cs-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(56px,8vw,116px);line-height:.88;letter-spacing:.01em;color:#fff;margin-bottom:18px;}
+.cs-title em{color:var(--r);font-style:normal;}
+.cs-sub{font-size:15px;color:rgba(255,255,255,.5);font-weight:300;max-width:560px;line-height:1.72;border-left:2px solid var(--r);padding-left:16px;}
+.cs-meta{display:flex;gap:36px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.07);flex-wrap:wrap;}
+.ml{font-family:"DM Mono",monospace;font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:3px;}
+.mv{font-size:12.5px;color:rgba(255,255,255,.7);}
+
+.strip{padding:18px 80px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+.strip-dark{background:var(--dark);}
+.strip-red{background:var(--r);}
+.ov-n{font-family:"Bebas Neue",sans-serif;font-size:34px;color:#fff;line-height:1;letter-spacing:.04em;}
+.ov-l{font-family:"DM Mono",monospace;font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:2px;}
+.sep{width:1px;height:36px;background:rgba(255,255,255,.15);}
+
+.body{max-width:1100px;margin:0 auto;padding:0 80px;}
+.cs-sec{padding:68px 0;border-bottom:1px solid var(--b);}
+.cs-sec:last-child{border-bottom:none;}
+.tag{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--r);margin-bottom:7px;}
+.sec-h{font-family:"Bebas Neue",sans-serif;font-size:clamp(34px,4vw,54px);letter-spacing:.02em;line-height:.93;margin-bottom:22px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;align-items:start;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:22px;}
+p.bt{font-size:13.5px;line-height:1.88;color:var(--dim);margin-bottom:13px;}
+p.bt strong{color:var(--dark);font-weight:500;}
+
+.ic{background:var(--gray);padding:26px 22px;position:relative;overflow:hidden;}
+.ic::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--r);}
+.il{font-family:"DM Mono",monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--r);margin-bottom:7px;}
+.it{font-size:12.5px;color:var(--dim);line-height:1.62;}
+.it strong{color:var(--dark);font-weight:500;}
+
+.pq{background:var(--dark);color:#fff;padding:36px 40px;margin:28px 0;position:relative;overflow:hidden;}
+.pq::before{content:'"';font-family:"Bebas Neue",sans-serif;font-size:160px;color:rgba(232,0,45,.1);position:absolute;top:-20px;left:16px;line-height:1;}
+.pq p{font-size:18px;font-weight:300;line-height:1.6;position:relative;z-index:1;font-style:italic;}
+.pq cite{display:block;margin-top:14px;font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);font-style:normal;position:relative;z-index:1;}
+
+.mc{border:1px solid var(--b);padding:26px 22px;transition:border-color .2s,background .2s;}
+.mc:hover{border-color:rgba(232,0,45,.2);background:var(--rg);}
+.mn{font-family:"Bebas Neue",sans-serif;font-size:40px;color:var(--r);line-height:1;letter-spacing:.03em;}
+.ml2{font-size:11.5px;color:var(--mid);line-height:1.5;margin-top:5px;}
+
+.sl{display:flex;flex-direction:column;gap:2px;margin-top:14px;}
+.si{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:var(--gray);padding:20px 22px;transition:background .2s;}
+.si:hover{background:#ebebeb;}
+.sn{font-family:"Bebas Neue",sans-serif;font-size:30px;color:var(--r);line-height:1;}
+.st{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:3px;}
+.sd{font-size:11.5px;color:var(--mid);line-height:1.6;}
+
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:22px;}
+.sw-card{padding:28px 24px;}
+.sw-card.s{background:#0a0a0a;color:#fff;}
+.sw-card.w{background:var(--gray);}
+.sw-card.o{background:var(--r);color:#fff;}
+.sw-card.t{background:var(--gray);}
+.sw-title{font-family:"Bebas Neue",sans-serif;font-size:24px;letter-spacing:.06em;margin-bottom:14px;}
+.sw-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.sw-list li{font-size:12px;line-height:1.5;padding-left:14px;position:relative;}
+.sw-list li::before{content:"—";position:absolute;left:0;font-size:10px;}
+.sw-card.s .sw-list li::before{color:var(--r);}
+.sw-card.o .sw-list li::before{color:rgba(255,255,255,.6);}
+
+.conclusion{background:var(--dark);padding:60px 80px;}
+.conclusion .sec-h{color:#fff;}
+.conclusion p{font-size:14.5px;color:rgba(255,255,255,.52);line-height:1.82;max-width:680px;margin-bottom:13px;}
+.conclusion p strong{color:#fff;}
+.cta-btn{display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;background:var(--r);color:#fff;padding:12px 22px;transition:opacity .18s;}
+.cta-btn:hover{opacity:.86;}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .68s ease,transform .68s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+@media(max-width:900px){
+  nav{padding:0 20px;}.n-title{display:none;}
+  .cs-hero-content{padding:72px 24px 56px;}
+  .strip{padding:18px 24px;gap:22px;}
+  .body{padding:0 24px;}
+  .grid2,.grid3,.swot{grid-template-columns:1fr;}
+  .conclusion{padding:48px 24px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="rishab-saini-final-2.html" class="n-back">&larr; Portfolio</a>
+  <div class="n-title">Case Study 02</div>
+  <div class="n-badge">F1 Research</div>
+</nav>
+
+<div class="cs-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <svg class="hero-telemetry" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <polyline points="0,80 120,60 200,90 320,20 440,70 560,40 640,85 760,30 880,65 960,25 1080,75 1200,45 1320,80 1440,35" fill="none" stroke="rgba(232,0,45,0.4)" stroke-width="1.5"/>
+    <polyline points="0,100 160,70 280,95 400,50 520,85 680,55 800,90 920,40 1040,80 1160,55 1280,90 1440,60" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </svg>
+  <div class="cs-hero-content">
+    <div class="eyebrow"><span>Case Study 02</span> &nbsp;&middot;&nbsp; Full Sail University &nbsp;&middot;&nbsp; 2024&ndash;2025</div>
+    <h1 class="cs-title">FORMULA<br><em>ONE</em><br>MARKET<br>RESEARCH</h1>
+    <p class="cs-sub">How F1 transformed from a niche European motorsport into the world's fastest-growing sports entertainment property — and what it means for the future of global sports commercial strategy.</p>
+    <div class="cs-meta">
+      <div><div class="ml">Author</div><div class="mv">Rishab Saini</div></div>
+      <div><div class="ml">Institution</div><div class="mv">Full Sail University</div></div>
+      <div><div class="ml">Focus</div><div class="mv">Commercial Growth &middot; Sponsorship &middot; Brand Strategy &middot; US Expansion</div></div>
+      <div><div class="ml">Core Insight</div><div class="mv">"F1 isn't racing anymore. It's billionaire ego at 220 mph."</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="strip strip-red">
+  <div class="ov-stat"><div class="ov-n">500M+</div><div class="ov-l">Global Viewers Per Season</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">24</div><div class="ov-l">Grand Prix Races 2025</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">3</div><div class="ov-l">US Grand Prix Events</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">40%</div><div class="ov-l">Fan Base Growth Since Netflix</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">#1</div><div class="ov-l">Fastest Growing Sports Property</div></div>
+</div>
+
+<div class="body">
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 01 &mdash; Executive Summary</p>
+    <h2 class="sec-h rv">F1 Stopped Selling<br>Racing. It Started<br>Selling Identity.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">Formula 1's transformation over the past decade is one of the most studied commercial reinventions in sports history. Before Liberty Media's 2017 acquisition, F1 was a technically brilliant but commercially stagnant European motorsport — aging fanbase, weak digital engagement, zero US cultural relevance.</p>
+        <p class="bt rv">After: everything changed. The sport stopped marketing cars and started marketing <strong>personalities, rivalries, wealth, drama, and access</strong>. Formula 1 became the luxury fashion brand of global sport.</p>
+        <p class="bt rv">This case study examines the commercial mechanics behind F1's explosive growth — Netflix storytelling, premium sponsorship strategy, US market expansion, Gen Z fan engagement, and the blueprint it provides for any sports property seeking global commercial relevance.</p>
+      </div>
+      <div class="rv d2">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div class="ic"><div class="il">Core Insight</div><div class="it"><strong>"People don't fall in love with lap times. They fall in love with characters."</strong> F1 understood this before any other motorsport — and most other sports.</div></div>
+          <div class="ic"><div class="il">The Transformation</div><div class="it">Motorsport product &rarr; <strong>Entertainment ecosystem.</strong> F1 didn't improve its racing. It improved its storytelling.</div></div>
+          <div class="ic"><div class="il">Commercial Result</div><div class="it">500M+ global viewers. Three US Grand Prix events. Luxury brand partnerships. <strong>The fastest growing sports entertainment property on earth.</strong></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 02 &mdash; Netflix Effect</p>
+    <h2 class="sec-h rv">Drive to Survive<br>Changed Everything.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">Drive to Survive is the single most important commercial decision in F1's modern history. By giving Netflix behind-the-scenes access to teams, drivers, and the paddock, F1 created something unprecedented: a sports drama that non-fans could fall in love with.</p>
+        <p class="bt rv">The show didn't explain racing. It explained <strong>ego, ambition, betrayal, wealth, and human drama</strong> — the universal language of entertainment. Fans who had never watched a race became passionate F1 followers within a single season.</p>
+        <p class="bt rv">The US market transformation is the clearest proof. Before Drive to Survive, F1 had minimal American cultural relevance. After — Miami Grand Prix sold out instantly, Las Vegas Grand Prix became a global media event, and Austin's Circuit of the Americas expanded. <strong>The show created a market where none existed.</strong></p>
+      </div>
+      <div class="rv d1">
+        <div class="pq" style="margin:0;">
+          <p>"F1 stopped marketing cars. It started marketing rivalries, personalities, pressure, wealth, emotion, and ego. Fans no longer needed to understand racing — they only needed to understand drama."</p>
+          <cite>F1 Market Research &mdash; Rishab Saini, Full Sail University 2024&ndash;2025</cite>
+        </div>
+      </div>
+    </div>
+    <div class="grid3 rv">
+      <div class="mc"><div class="mn">Season 1</div><div class="ml2">Drive to Survive launches — 2019. US viewership begins measurable growth for the first time in F1 history.</div></div>
+      <div class="mc"><div class="mn">+40%</div><div class="ml2">Fan base growth attributed directly to Netflix exposure — predominantly younger, female, and US-based audiences.</div></div>
+      <div class="mc"><div class="mn">3 US GPs</div><div class="ml2">Miami, Las Vegas, Austin — three American races driven almost entirely by the post-Netflix audience explosion.</div></div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 03 &mdash; Luxury Brand Strategy</p>
+    <h2 class="sec-h rv">Every Grand Prix<br>is a Luxury Networking<br>Event in Disguise.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">F1's most strategically brilliant move was its deliberate positioning as a <strong>luxury lifestyle brand</strong> rather than a sporting competition. The sport intentionally curates an ecosystem of exclusivity — yachts in Monaco, Paddock Club hospitality, private jets, champagne podiums, celebrity guest lists.</p>
+        <p class="bt rv">This creates what marketers call "fear of missing out for wealthy audiences" — a commercial dynamic where being at a Grand Prix signals membership in a global elite. The race becomes secondary to the experience of being there.</p>
+        <p class="bt rv">For sponsors, this positioning is invaluable. <strong>F1 sponsorship isn't advertising. It's reputation positioning.</strong> Brands like LVMH, Rolex, Heineken, and Aramco don't buy F1 because of lap times — they buy the association with global elite culture that F1 has manufactured.</p>
+      </div>
+      <div class="rv d2">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div class="ic"><div class="il">Visual Identity of Luxury</div><div class="it">Yachts &middot; Watches &middot; Champagne &middot; Monaco &middot; Paddock Clubs &middot; Private Jets &middot; Celebrity Culture. <strong>F1 builds aspirational visual language deliberately.</strong></div></div>
+          <div class="ic"><div class="il">Sponsorship Categories</div><div class="it">Luxury watches &middot; Airlines &middot; Fintech &middot; Crypto &middot; Luxury fashion &middot; Energy drinks. <strong>The highest-income consumer base of any sport.</strong></div></div>
+          <div class="ic"><div class="il">Adidas Move (2025)</div><div class="it">Adidas signed apparel partnerships with Mercedes F1 and Audi F1 &mdash; incorporating collaborators like Bad Bunny. <strong>Fashion is now entering F1 directly.</strong></div></div>
+          <div class="ic"><div class="il">Strategic Line</div><div class="it">"The cars are fast. <strong>The branding is faster.</strong>"</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 04 &mdash; Gen Z & Driver Culture</p>
+    <h2 class="sec-h rv">Drivers Became<br>Influencers.<br>Fans Became Lifestyle.</h2>
+    <div class="grid3 rv">
+      <div class="ic"><div class="il">Lewis Hamilton</div><div class="it">Fashion ambassador, cultural activist, lifestyle icon. Hamilton proved F1 drivers can operate at the intersection of sport, fashion, and social justice — <strong>expanding F1's audience beyond motorsport entirely.</strong></div></div>
+      <div class="ic"><div class="il">Charles Leclerc</div><div class="it">Young, stylish, emotionally accessible. Leclerc's social media presence and fashion crossovers bring <strong>Gen Z audiences who follow drivers as lifestyle figures</strong> rather than racing athletes.</div></div>
+      <div class="ic"><div class="il">Lando Norris</div><div class="it">Gaming culture, meme-friendly, authentic social presence. Norris unlocked the <strong>esports and gaming crossover audience</strong> — a demographic F1 had never previously accessed.</div></div>
+    </div>
+    <div class="pq rv">
+      <p>"F1 mastered short-form content, behind-the-scenes storytelling, memes, driver personalities, TikTok culture, and fashion crossover. Drivers became influencers, lifestyle icons, and fashion ambassadors — not just racing drivers."</p>
+      <cite>F1 Market Research &mdash; Rishab Saini, Full Sail University 2024&ndash;2025</cite>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 05 &mdash; SWOT Analysis</p>
+    <h2 class="sec-h rv">Formula One<br>Today.</h2>
+    <div class="swot rv">
+      <div class="sw-card s">
+        <div class="sw-title" style="color:var(--r);">Strengths</div>
+        <ul class="sw-list">
+          <li style="color:rgba(255,255,255,.7);">Luxury brand positioning — unmatched in motorsport</li>
+          <li style="color:rgba(255,255,255,.7);">Global audience across 190+ countries</li>
+          <li style="color:rgba(255,255,255,.7);">Elite sponsorship appeal — highest income fan base</li>
+          <li style="color:rgba(255,255,255,.7);">Netflix storytelling — proven audience expansion tool</li>
+          <li style="color:rgba(255,255,255,.7);">Premium identity — yachts, watches, Monaco</li>
+        </ul>
+      </div>
+      <div class="sw-card w">
+        <div class="sw-title">Weaknesses</div>
+        <ul class="sw-list">
+          <li style="color:var(--dim);">Expensive accessibility — pricing excludes mass audiences</li>
+          <li style="color:var(--dim);">Limited grassroots participation — unlike football or cricket</li>
+          <li style="color:var(--dim);">Over-commercialization risk — authenticity erosion</li>
+          <li style="color:var(--dim);">South Asian market largely untapped</li>
+        </ul>
+      </div>
+      <div class="sw-card o">
+        <div class="sw-title" style="color:#fff;">Opportunities</div>
+        <ul class="sw-list">
+          <li style="color:rgba(255,255,255,.85);">US market still in early growth phase</li>
+          <li style="color:rgba(255,255,255,.85);">Gen Z growth through gaming and esports crossover</li>
+          <li style="color:rgba(255,255,255,.85);">Fashion collaborations — Adidas, luxury brands</li>
+          <li style="color:rgba(255,255,255,.85);">India/South Asia — 1.4B untapped motorsport fans</li>
+          <li style="color:rgba(255,255,255,.85);">Women's racing — F1 Academy expansion</li>
+        </ul>
+      </div>
+      <div class="sw-card t">
+        <div class="sw-title">Threats</div>
+        <ul class="sw-list">
+          <li style="color:var(--dim);">Economic downturns reducing luxury sponsorship budgets</li>
+          <li style="color:var(--dim);">Sustainability criticism — carbon footprint of global racing</li>
+          <li style="color:var(--dim);">Fan fatigue from calendar expansion</li>
+          <li style="color:var(--dim);">Driver talent pipeline narrowing at elite level</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 06 &mdash; Strategic Recommendation</p>
+    <h2 class="sec-h rv">The F1 Future<br>Fan Ecosystem.</h2>
+    <p class="bt rv" style="max-width:640px;">F1's next commercial frontier is converting passive viewers into active lifestyle members through an integrated digital ecosystem that makes every fan feel inside the paddock — regardless of geography or ticket price.</p>
+    <div class="sl rv">
+      <div class="si"><div class="sn">01</div><div><div class="st">Exclusive Behind-the-Scenes Digital Membership</div><div class="sd">Paddock VR experiences, driver Q&As, team garage access — creating a tiered membership model where digital fans pay for access previously reserved for billionaire paddock guests.</div></div></div>
+      <div class="si"><div class="sn">02</div><div><div class="st">AI Race Analytics & Fan Prediction Gaming</div><div class="sd">Real-time telemetry data, AI-powered race predictions, fan gaming leagues — turning the technical complexity of F1 into an engagement mechanic rather than a barrier to entry.</div></div></div>
+      <div class="si"><div class="sn">03</div><div><div class="st">India Grand Prix — The Biggest Untapped Market</div><div class="sd">India has 1.4B people, a growing middle class, and zero F1 Grand Prix. A Mumbai or Delhi Grand Prix would be the single largest audience expansion event in F1 history — combining motorsport with cricket culture's entertainment infrastructure.</div></div></div>
+      <div class="si"><div class="sn">04</div><div><div class="st">Fashion Ecosystem Deepening</div><div class="sd">Following Adidas x Mercedes and Adidas x Audi, F1 should develop a dedicated fashion week presence — positioning Grand Prix weekends as fashion events on par with Met Gala in media coverage.</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="conclusion">
+  <p class="tag" style="color:rgba(255,255,255,.3);">Research Conclusion</p>
+  <h2 class="sec-h">"F1 Mastered Something<br>Most Sports Still Don't<br>Understand.<br><em style="color:var(--r);font-style:normal;">People Want Identity,<br>Access &amp; Status."</em></h2>
+  <p>Formula 1's commercial reinvention is the most instructive case study in modern sports business. The sport didn't get faster — it got <strong>smarter about what it was actually selling.</strong></p>
+  <p>The lesson for every sports commercial professional: <strong>product features are table stakes. Identity, community, and exclusive access are the real commercial proposition.</strong> F1 proved this at 220 miles per hour.</p>
+  <p>As a sports business professional with lived experience in cricket — a sport at the beginning of the same commercial transformation F1 completed — this research informs how I think about emerging sports market opportunities globally.</p>
+  <a href="mailto:Rishab102023@gmail.com" class="cta-btn">Discuss This Research &rarr;</a>
+</div>
+
+<div style="padding:18px 80px;border-top:1px solid var(--b);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Rishab Saini &middot; rishabsaini.com</div>
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Case Study 02 of 05 &middot; F1 Market Research</div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");obs.unobserve(x.target);}});},{threshold:0.06});
+document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

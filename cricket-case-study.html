@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cricket Business Strategy — Rishab Saini</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--dark:#080808;--gray:#f3f3f3;--mid:#888;--dim:#444;--r:#e8002d;--rg:rgba(232,0,45,0.06);--b:rgba(0,0,0,0.08);--cricket:#0a2010;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-serif;font-weight:300;line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);}
+.n-back{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mid);transition:color .18s;display:flex;align-items:center;gap:7px;}
+.n-back:hover{color:var(--dark);}
+.n-title{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);}
+.n-badge{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;background:var(--cricket);color:#fff;}
+
+.cs-hero{min-height:90vh;background:var(--cricket);display:flex;align-items:flex-end;padding-top:52px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.014) 79px,rgba(255,255,255,.014) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.014) 79px,rgba(255,255,255,.014) 80px);}
+.hero-glow{position:absolute;width:600px;height:500px;border-radius:50%;background:radial-gradient(ellipse,rgba(232,0,45,.12) 0%,transparent 70%);bottom:-150px;right:-50px;z-index:0;}
+.hero-glow2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,200,80,.06) 0%,transparent 70%);top:-100px;left:100px;z-index:0;}
+.cs-hero-content{position:relative;z-index:2;padding:80px 80px 64px;max-width:960px;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:22px;}
+.eyebrow span{color:var(--r);}
+.cs-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(56px,8vw,112px);line-height:.88;letter-spacing:.01em;color:#fff;margin-bottom:18px;}
+.cs-title em{color:var(--r);font-style:normal;}
+.cs-sub{font-size:15px;color:rgba(255,255,255,.5);font-weight:300;max-width:560px;line-height:1.72;border-left:2px solid var(--r);padding-left:16px;}
+.cs-meta{display:flex;gap:36px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;}
+.ml{font-family:"DM Mono",monospace;font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:3px;}
+.mv{font-size:12.5px;color:rgba(255,255,255,.7);}
+
+.strip{background:var(--r);padding:18px 80px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+.ov-n{font-family:"Bebas Neue",sans-serif;font-size:34px;color:#fff;line-height:1;letter-spacing:.04em;}
+.ov-l{font-family:"DM Mono",monospace;font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:2px;}
+.sep{width:1px;height:36px;background:rgba(255,255,255,.2);}
+
+.body{max-width:1100px;margin:0 auto;padding:0 80px;}
+.cs-sec{padding:68px 0;border-bottom:1px solid var(--b);}
+.cs-sec:last-child{border-bottom:none;}
+.tag{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--r);margin-bottom:7px;}
+.sec-h{font-family:"Bebas Neue",sans-serif;font-size:clamp(34px,4vw,54px);letter-spacing:.02em;line-height:.93;margin-bottom:22px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;align-items:start;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:22px;}
+p.bt{font-size:13.5px;line-height:1.88;color:var(--dim);margin-bottom:13px;}
+p.bt strong{color:var(--dark);font-weight:500;}
+
+.ic{background:var(--gray);padding:26px 22px;position:relative;overflow:hidden;}
+.ic::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--r);}
+.il{font-family:"DM Mono",monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--r);margin-bottom:7px;}
+.it{font-size:12.5px;color:var(--dim);line-height:1.62;}
+.it strong{color:var(--dark);font-weight:500;}
+
+.pq{background:var(--cricket);color:#fff;padding:36px 40px;margin:28px 0;position:relative;overflow:hidden;}
+.pq::before{content:'"';font-family:"Bebas Neue",sans-serif;font-size:160px;color:rgba(232,0,45,.1);position:absolute;top:-20px;left:16px;line-height:1;}
+.pq p{font-size:18px;font-weight:300;line-height:1.6;position:relative;z-index:1;font-style:italic;}
+.pq cite{display:block;margin-top:14px;font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);font-style:normal;position:relative;z-index:1;}
+
+.mc{border:1px solid var(--b);padding:26px 22px;transition:border-color .2s,background .2s;}
+.mc:hover{border-color:rgba(232,0,45,.2);background:var(--rg);}
+.mn{font-family:"Bebas Neue",sans-serif;font-size:40px;color:var(--r);line-height:1;letter-spacing:.03em;}
+.mc-l{font-size:11.5px;color:var(--mid);line-height:1.5;margin-top:5px;}
+
+.sl{display:flex;flex-direction:column;gap:2px;margin-top:14px;}
+.si{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:var(--gray);padding:20px 22px;transition:background .2s;}
+.si:hover{background:#ebebeb;}
+.sn{font-family:"Bebas Neue",sans-serif;font-size:30px;color:var(--r);line-height:1;}
+.st{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:3px;}
+.sd{font-size:11.5px;color:var(--mid);line-height:1.6;}
+
+.why-card{background:var(--dark);padding:28px 22px;position:relative;overflow:hidden;transition:background .2s;}
+.why-card:hover{background:var(--cricket);}
+.wc-n{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.2em;color:var(--r);margin-bottom:8px;}
+.wc-t{font-family:"Bebas Neue",sans-serif;font-size:20px;color:#fff;letter-spacing:.04em;margin-bottom:7px;}
+.wc-d{font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.6;}
+
+.nocta-box{background:var(--cricket);padding:44px;margin-top:32px;position:relative;overflow:hidden;}
+.nocta-box::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,.012) 59px,rgba(255,255,255,.012) 60px);}
+.nb-tag{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--r);margin-bottom:10px;position:relative;z-index:1;}
+.nb-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(26px,3.5vw,44px);color:#fff;letter-spacing:.02em;line-height:.95;margin-bottom:16px;position:relative;z-index:1;}
+.nb-body{font-size:13px;color:rgba(255,255,255,.52);line-height:1.75;max-width:640px;position:relative;z-index:1;}
+
+.conclusion{background:var(--cricket);padding:60px 80px;}
+.conclusion .sec-h{color:#fff;}
+.conclusion p{font-size:14.5px;color:rgba(255,255,255,.5);line-height:1.82;max-width:680px;margin-bottom:13px;}
+.conclusion p strong{color:#fff;}
+.cta-btn{display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;background:var(--r);color:#fff;padding:12px 22px;transition:opacity .18s;}
+.cta-btn:hover{opacity:.86;}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .68s ease,transform .68s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+@media(max-width:900px){
+  nav{padding:0 20px;}.n-title{display:none;}
+  .cs-hero-content{padding:72px 24px 56px;}
+  .strip{padding:18px 24px;gap:22px;}
+  .body{padding:0 24px;}
+  .grid2,.grid3{grid-template-columns:1fr;}
+  .nocta-box{padding:28px 24px;}
+  .conclusion{padding:48px 24px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="rishab-saini-final-2.html" class="n-back">&larr; Portfolio</a>
+  <div class="n-title">Case Study 03</div>
+  <div class="n-badge">Cricket Strategy</div>
+</nav>
+
+<div class="cs-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="cs-hero-content">
+    <div class="eyebrow"><span>Case Study 03</span> &nbsp;&middot;&nbsp; Full Sail University &nbsp;&middot;&nbsp; 2024&ndash;2025</div>
+    <h1 class="cs-title">CRICKET<br><em>BUSINESS</em><br>STRATEGY</h1>
+    <p class="cs-sub">Why cricket is the world's most commercially underserved major sport — and how the right brands, strategies, and commercial models can unlock 2.5 billion fans who are ready to spend.</p>
+    <div class="cs-meta">
+      <div><div class="ml">Author</div><div class="mv">Rishab Saini</div></div>
+      <div><div class="ml">Experience</div><div class="mv">15 Years Competitive Cricket &middot; Red Bull India Champion 2020</div></div>
+      <div><div class="ml">Focus</div><div class="mv">Commercial Strategy &middot; Sponsorship &middot; Brand Entry &middot; Fan Monetization</div></div>
+      <div><div class="ml">Perspective</div><div class="mv">Athlete + Business Analyst + Sports Marketing Professional</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="ov-stat"><div class="ov-n">2.5B</div><div class="ov-l">Global Cricket Fans</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">$10B+</div><div class="ov-l">IPL Brand Value</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">110</div><div class="ov-l">National Teams Globally</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">300M</div><div class="ov-l">2023 World Cup Final Viewers</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">15 Yrs</div><div class="ov-l">Rishab Saini — Elite Cricketer</div></div>
+</div>
+
+<div class="body">
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 01 &mdash; The Opportunity</p>
+    <h2 class="sec-h rv">The World's Most<br>Commercially Underserved<br>Major Sport.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">Cricket has 2.5 billion fans. The IPL generates $10B+ in annual brand value. The 2023 Cricket World Cup Final attracted 300 million TV viewers. A 2024 India vs Pakistan match at a temporary stadium in New York sold out with 34,000 fans and set records for US cricket attendance.</p>
+        <p class="bt rv">Yet cricket remains <strong>massively undercommercialized globally.</strong> The sport's commercial infrastructure — sponsorship models, fan monetization, digital engagement, brand partnerships — lags decades behind football, basketball, and even Formula 1.</p>
+        <p class="bt rv">This is not a cricket problem. This is a <strong>commercial strategy problem.</strong> The fans are there. The passion is there. The cultural significance is there. What's missing is the commercial sophistication to convert 2.5 billion passionate fans into a commercial ecosystem that reflects the sport's true global scale.</p>
+      </div>
+      <div class="rv d2">
+        <div class="pq" style="margin:0;">
+          <p>"Cricket has rarely been considered a cool sport in the same way as basketball or soccer. But NOCTA — Nike's sub-label with Drake — just released a collection as an ode to Antiguan cricket culture. Something is shifting."</p>
+          <cite>SportsVerse Newsletter, Daniel-Yaw Miller &mdash; September 11, 2025</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 02 &mdash; Why Cricket Is Cool Now</p>
+    <h2 class="sec-h rv">The Cultural<br>Moment Is<br>Already Here.</h2>
+    <div class="grid3 rv">
+      <div class="why-card"><div class="wc-n">Signal 01 &mdash;</div><div class="wc-t">Nike x Drake / NOCTA Cricket Collection</div><div class="wc-d">Fall 2025 "Cardinal Stock" capsule — an ode to Antiguan cricket culture. Nike's streetwear sub-label chose cricket culture as its creative reference. This is a massive signal of cultural arrival.</div></div>
+      <div class="why-card"><div class="wc-n">Signal 02 &mdash;</div><div class="wc-t">Record US Attendance</div><div class="wc-d">34,000 fans at a temporary stadium in Eisenhower Park, NY for India vs Pakistan in 2024. Cricket in the United States is no longer hypothetical — it's already happening.</div></div>
+      <div class="why-card"><div class="wc-n">Signal 03 &mdash;</div><div class="wc-t">Caribbean Cool Factor</div><div class="wc-d">West Indies cricket has always been aspirational — Viv Richards, Chris Gayle, Curtley Ambrose. The Caribbean is cricket's most compelling cultural story and its strongest bridge to mainstream fashion and music culture.</div></div>
+      <div class="why-card"><div class="wc-n">Signal 04 &mdash;</div><div class="wc-t">IPL Commercial Growth</div><div class="wc-d">The Indian Premier League is the fastest-growing sports league on earth — $10B+ brand value, global broadcast deals, marquee international players, and a franchise model copied from the NBA playbook.</div></div>
+      <div class="why-card"><div class="wc-n">Signal 05 &mdash;</div><div class="wc-t">Fashion Industry Interest</div><div class="wc-d">The cricket knit sweater has long been adopted by luxury brands. But 2025 saw the first true cultural crossover — NOCTA choosing cricket as its creative lens, opening the door for broader fashion-cricket convergence.</div></div>
+      <div class="why-card"><div class="wc-n">Signal 06 &mdash;</div><div class="wc-t">Digital-First Generation</div><div class="wc-d">T20 cricket is built for the short-attention digital generation — explosive action, 20 overs per side, 3-hour entertainment windows. The format aligns perfectly with streaming, social media, and Gen Z consumption patterns.</div></div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 03 &mdash; The Commercial Gap</p>
+    <h2 class="sec-h rv">Why Brands<br>Left Cricket &mdash;<br>And Why They're Wrong.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">Nike was the official apparel partner of the Indian national cricket team for <strong>14 years until 2020</strong> — then exited because cricket wasn't profitable enough to justify continued R&D, marketing, and product development investment.</p>
+        <p class="bt rv">Since then, <strong>Puma, New Balance, and Adidas</strong> have grown their cricket presence significantly — with Adidas taking over Nike's Indian national federation sponsorship. The brands that stayed or entered are now positioned to capture enormous value as cricket commercializes.</p>
+        <p class="bt rv">Nike's exit and re-entry signal through NOCTA represents exactly the tension at the heart of cricket's commercial moment: <strong>the sport's cultural power is undeniable, but its commercial infrastructure hasn't yet matched that power.</strong> The brands that close that gap first will own the market.</p>
+      </div>
+      <div class="rv d2">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div class="ic"><div class="il">Nike Exit 2020</div><div class="it">Nike left cricket after 14 years as India team sponsor — not enough commercial return. <strong>Adidas, Puma, New Balance moved in immediately.</strong></div></div>
+          <div class="ic"><div class="il">Nike Re-Entry Signal</div><div class="it">NOCTA Cricket Collection Fall 2025 — Nike used cricket culture as creative reference without product commitment. <strong>The door is open but no one has walked through it fully.</strong></div></div>
+          <div class="ic"><div class="il">The Gap</div><div class="it">2.5B fans. $10B IPL. 300M World Cup viewers. <strong>No dominant global sports brand owning cricket commercially.</strong> This is the white space.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nocta-box rv">
+      <div class="nb-tag">Industry Intelligence &mdash; SportsVerse, September 2025</div>
+      <div class="nb-title">NOCTA Chose Cricket.<br>That Changes Everything.</div>
+      <div class="nb-body">When Nike's streetwear sub-label — in partnership with Drake — chooses cricket as its creative reference for a Fall 2025 collection, it signals something the industry has been slow to acknowledge: cricket culture has genuine streetwear credibility. Not just in South Asia. Not just in the Caribbean. Globally. The sport that fashion forgot is finding its cultural moment — and the commercial opportunity follows culture, not the other way around.</div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 04 &mdash; Commercial Strategy Framework</p>
+    <h2 class="sec-h rv">How to Build a<br>Cricket Commercial<br>Empire.</h2>
+    <p class="bt rv" style="max-width:640px;">Drawing on 15 years of competitive cricket experience, Full Sail University sports business training, and research on how F1, Red Bull, and Nike have commercialized their respective sports — this framework outlines the commercial playbook for cricket's next decade.</p>
+    <div class="sl rv">
+      <div class="si"><div class="sn">01</div><div><div class="st">Fan Monetization Through Digital Infrastructure</div><div class="sd">Cricket's 2.5B fans are largely under-monetized. The NBA's personalized digital experience model — delivering custom content, merchandise offers, and experiences through data — applied to cricket would generate billions in incremental fan revenue. The IPL app is the starting point; the opportunity extends far beyond it.</div></div></div>
+      <div class="si"><div class="sn">02</div><div><div class="st">Sponsorship Model Sophistication</div><div class="sd">Cricket sponsorship remains largely transactional — logo on jersey, boundary boards, title rights. The Red Bull Campus Cricket model shows what owned event activation looks like. The F1 model shows what luxury positioning does to sponsor interest. Cricket needs both — simultaneously.</div></div></div>
+      <div class="si"><div class="sn">03</div><div><div class="st">Player Storytelling — The Drive to Survive Model</div><div class="sd">F1's Netflix transformation proves that behind-the-scenes storytelling converts non-fans into passionate followers. Cricket has the personalities, the drama, the rivalries, and the global reach — it lacks the storytelling infrastructure. A Drive to Survive equivalent for IPL would be the single highest-ROI investment in cricket commercial history.</div></div></div>
+      <div class="si"><div class="sn">04</div><div><div class="st">Fashion & Culture Convergence</div><div class="sd">The NOCTA moment opens the door. Cricket has the Caribbean cool factor, the South Asian cultural significance, and the UK heritage — three of the most influential cultural markets in global fashion. Brands that move first on cricket-fashion crossover will define a new aesthetic category.</div></div></div>
+      <div class="si"><div class="sn">05</div><div><div class="st">US Market Development</div><div class="sd">34,000 fans at a temporary New York stadium for India vs Pakistan in 2024. Major League Cricket launched in 2023. The US market for cricket is in the same position as F1 was in 2018 — pre-explosion. The brands and commercial structures that invest now will benefit from a 10x audience expansion over the next decade.</div></div></div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 05 &mdash; Insider Perspective</p>
+    <h2 class="sec-h rv">What 15 Years<br>Inside the Sport<br>Taught Me.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">I am one of very few sports business professionals who can speak about cricket's commercial opportunity from both sides simultaneously — as a <strong>Red Bull Campus Cricket All India Champion</strong> who has played in national finals at Ekana Cricket Stadium, and as a <strong>sports business professional</strong> with an MBA in Business Analytics and graduate training in Entertainment Business & Sports Management.</p>
+        <p class="bt rv">From inside the sport: cricket's culture is deeper, more passionate, and more commercially receptive than any outsider analysis suggests. The fan loyalty in South Asian cricket communities rivals any sport on earth. The social significance of cricket in India, Pakistan, the Caribbean, and the UK diaspora is not captured in viewership numbers alone.</p>
+        <p class="bt rv">From the business side: cricket's commercial infrastructure is 20 years behind its cultural significance. The gap between fan passion and commercial monetization is the opportunity. <strong>The brands that close that gap will define the next era of global sports business.</strong></p>
+      </div>
+      <div class="rv d2">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div class="mc"><div class="mn">2020</div><div class="mc-l">Won Red Bull Campus Cricket All India Championship — DAV College Jalandhar at Ekana Stadium, Lucknow</div></div>
+          <div class="mc"><div class="mn">15+</div><div class="mc-l">Years competitive cricket — Punjab State representative at U-16, U-19, and college national level</div></div>
+          <div class="mc"><div class="mn">3.98</div><div class="mc-l">GPA at Full Sail University studying Entertainment Business & Sports Management — Valedictorian</div></div>
+          <div class="mc"><div class="mn">MBA</div><div class="mc-l">Business Analytics in progress — applying data-driven commercial strategy to sports business contexts</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="conclusion">
+  <p class="tag" style="color:rgba(255,255,255,.28);">Strategic Conclusion</p>
+  <h2 class="sec-h">"Cricket Is Not<br>Waiting to Become<br>Commercial.<br><em style="color:var(--r);font-style:normal;">It Already Is.<br>The World Just<br>Hasn't Noticed Yet."</em></h2>
+  <p>The NOCTA collection. The New York sellout. The $10B IPL. The 300M World Cup viewers. <strong>Cricket's commercial moment is not coming — it is already here.</strong></p>
+  <p>The brands, organizations, and professionals who recognize this now — before the mainstream narrative catches up — will have an extraordinary first-mover advantage in the world's largest undercommercialized sports market.</p>
+  <p>As both a 15-year competitive cricketer and a sports business professional, I am positioned at exactly this intersection. <strong>That combination is the commercial opportunity I bring to any organization ready to take cricket seriously.</strong></p>
+  <a href="mailto:Rishab102023@gmail.com" class="cta-btn">Discuss This Strategy &rarr;</a>
+</div>
+
+<div style="padding:18px 80px;border-top:1px solid var(--b);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Rishab Saini &middot; rishabsaini.com</div>
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Case Study 03 of 05 &middot; Cricket Business Strategy</div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");obs.unobserve(x.target);}});},{threshold:0.06});
+document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

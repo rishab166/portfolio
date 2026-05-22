@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Bull Brand Research — Rishab Saini</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--dark:#080808;--gray:#f3f3f3;--mid:#888;--dim:#444;--r:#e8002d;--rg:rgba(232,0,45,0.06);--b:rgba(0,0,0,0.08);--rb:#1c1c2e;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-serif;font-weight:300;line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);}
+.n-back{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mid);transition:color .18s;display:flex;align-items:center;gap:7px;}
+.n-back:hover{color:var(--dark);}
+.n-title{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);}
+.n-badge{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;background:var(--r);color:#fff;}
+
+.cs-hero{min-height:90vh;background:var(--rb);display:flex;align-items:flex-end;padding-top:52px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.016) 79px,rgba(255,255,255,.016) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.016) 79px,rgba(255,255,255,.016) 80px);}
+.hero-glow1{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,0,45,.18) 0%,transparent 70%);top:-100px;right:100px;z-index:0;}
+.hero-glow2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,0,.06) 0%,transparent 70%);bottom:-50px;left:50px;z-index:0;}
+.cs-hero-content{position:relative;z-index:2;padding:80px 80px 64px;max-width:960px;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:22px;}
+.eyebrow span{color:var(--r);}
+.cs-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(56px,8vw,116px);line-height:.88;letter-spacing:.01em;color:#fff;margin-bottom:18px;}
+.cs-title em{color:var(--r);font-style:normal;}
+.cs-sub{font-size:15px;color:rgba(255,255,255,.5);font-weight:300;max-width:560px;line-height:1.72;border-left:2px solid var(--r);padding-left:16px;}
+.cs-meta{display:flex;gap:36px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;}
+.ml{font-family:"DM Mono",monospace;font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:3px;}
+.mv{font-size:12.5px;color:rgba(255,255,255,.7);}
+
+.strip{background:var(--r);padding:18px 80px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+.ov-n{font-family:"Bebas Neue",sans-serif;font-size:34px;color:#fff;line-height:1;letter-spacing:.04em;}
+.ov-l{font-family:"DM Mono",monospace;font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:2px;}
+.sep{width:1px;height:36px;background:rgba(255,255,255,.2);}
+
+.body{max-width:1100px;margin:0 auto;padding:0 80px;}
+.cs-sec{padding:68px 0;border-bottom:1px solid var(--b);}
+.cs-sec:last-child{border-bottom:none;}
+.tag{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--r);margin-bottom:7px;}
+.sec-h{font-family:"Bebas Neue",sans-serif;font-size:clamp(34px,4vw,54px);letter-spacing:.02em;line-height:.93;margin-bottom:22px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:14px;align-items:start;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:22px;}
+p.bt{font-size:13.5px;line-height:1.88;color:var(--dim);margin-bottom:13px;}
+p.bt strong{color:var(--dark);font-weight:500;}
+
+.ic{background:var(--gray);padding:26px 22px;position:relative;overflow:hidden;}
+.ic::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--r);}
+.il{font-family:"DM Mono",monospace;font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--r);margin-bottom:7px;}
+.it{font-size:12.5px;color:var(--dim);line-height:1.62;}
+.it strong{color:var(--dark);font-weight:500;}
+
+.pq{background:var(--rb);color:#fff;padding:36px 40px;margin:28px 0;position:relative;overflow:hidden;}
+.pq::before{content:'"';font-family:"Bebas Neue",sans-serif;font-size:160px;color:rgba(232,0,45,.12);position:absolute;top:-20px;left:16px;line-height:1;}
+.pq p{font-size:18px;font-weight:300;line-height:1.6;position:relative;z-index:1;font-style:italic;}
+.pq cite{display:block;margin-top:14px;font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32);font-style:normal;position:relative;z-index:1;}
+
+.event-card{background:var(--dark);padding:28px 22px;transition:background .2s;}
+.event-card:hover{background:var(--rb);}
+.ec-n{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.2em;color:var(--r);margin-bottom:8px;}
+.ec-t{font-family:"Bebas Neue",sans-serif;font-size:22px;color:#fff;letter-spacing:.04em;margin-bottom:7px;}
+.ec-d{font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.6;}
+
+.sl{display:flex;flex-direction:column;gap:2px;margin-top:14px;}
+.si{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:var(--gray);padding:20px 22px;transition:background .2s;}
+.si:hover{background:#ebebeb;}
+.sn{font-family:"Bebas Neue",sans-serif;font-size:30px;color:var(--r);line-height:1;}
+.st{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:3px;}
+.sd{font-size:11.5px;color:var(--mid);line-height:1.6;}
+
+.cricket-opp{background:var(--rb);padding:48px;margin-top:32px;position:relative;overflow:hidden;}
+.cricket-opp::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,.015) 59px,rgba(255,255,255,.015) 60px);}
+.co-tag{font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--r);margin-bottom:10px;position:relative;z-index:1;}
+.co-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(28px,4vw,48px);color:#fff;letter-spacing:.02em;line-height:.95;margin-bottom:18px;position:relative;z-index:1;}
+.co-body{font-size:13px;color:rgba(255,255,255,.55);line-height:1.75;max-width:640px;margin-bottom:22px;position:relative;z-index:1;}
+.co-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;position:relative;z-index:1;}
+.co-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:20px 18px;}
+.co-card-t{font-size:12px;font-weight:500;color:#fff;margin-bottom:5px;}
+.co-card-d{font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;}
+
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:22px;}
+.sw-card{padding:28px 24px;}
+.sw-card.s{background:var(--dark);}
+.sw-card.w{background:var(--gray);}
+.sw-card.o{background:var(--r);}
+.sw-card.t{background:var(--gray);}
+.sw-title{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:.06em;margin-bottom:12px;}
+.sw-card.s .sw-title{color:var(--r);}
+.sw-card.o .sw-title{color:#fff;}
+.sw-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.sw-list li{font-size:11.5px;line-height:1.5;padding-left:13px;position:relative;}
+.sw-list li::before{content:"—";position:absolute;left:0;font-size:10px;}
+.sw-card.s .sw-list li{color:rgba(255,255,255,.65);}
+.sw-card.s .sw-list li::before{color:var(--r);}
+.sw-card.o .sw-list li{color:rgba(255,255,255,.85);}
+.sw-card.o .sw-list li::before{color:rgba(255,255,255,.5);}
+.sw-card.w .sw-list li,.sw-card.t .sw-list li{color:var(--dim);}
+
+.conclusion{background:var(--rb);padding:60px 80px;}
+.conclusion .sec-h{color:#fff;}
+.conclusion p{font-size:14.5px;color:rgba(255,255,255,.5);line-height:1.82;max-width:680px;margin-bottom:13px;}
+.conclusion p strong{color:#fff;}
+.cta-btn{display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;background:var(--r);color:#fff;padding:12px 22px;transition:opacity .18s;}
+.cta-btn:hover{opacity:.86;}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .68s ease,transform .68s ease;}
+.rv.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+@media(max-width:900px){
+  nav{padding:0 20px;}.n-title{display:none;}
+  .cs-hero-content{padding:72px 24px 56px;}
+  .strip{padding:18px 24px;gap:22px;}
+  .body{padding:0 24px;}
+  .grid2,.grid3,.swot,.co-grid{grid-template-columns:1fr;}
+  .cricket-opp{padding:28px 24px;}
+  .conclusion{padding:48px 24px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="rishab-saini-final-2.html" class="n-back">&larr; Portfolio</a>
+  <div class="n-title">Case Study 05</div>
+  <div class="n-badge">Red Bull</div>
+</nav>
+
+<div class="cs-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="cs-hero-content">
+    <div class="eyebrow"><span>Case Study 05</span> &nbsp;&middot;&nbsp; Full Sail University &nbsp;&middot;&nbsp; 2024&ndash;2025</div>
+    <h1 class="cs-title">RED BULL<br><em>ATHLETE</em><br>BRANDING<br>EMPIRE</h1>
+    <p class="cs-sub">How Red Bull transformed from a beverage company into one of the most powerful sports marketing machines in the world — and why cricket is their next frontier.</p>
+    <div class="cs-meta">
+      <div><div class="ml">Author</div><div class="mv">Rishab Saini</div></div>
+      <div><div class="ml">Institution</div><div class="mv">Full Sail University</div></div>
+      <div><div class="ml">Focus</div><div class="mv">Athlete Branding &middot; Event Ownership &middot; Media Strategy &middot; Cricket Expansion</div></div>
+      <div><div class="ml">Personal Connection</div><div class="mv">Red Bull Campus Cricket India Champion 2020</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="ov-stat"><div class="ov-n">600+</div><div class="ov-l">Sponsored Athletes</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">100+</div><div class="ov-l">Countries of Operation</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">12.1B</div><div class="ov-l">Cans Sold Annually</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">2</div><div class="ov-l">F1 Championship Teams</div></div>
+  <div class="sep"></div>
+  <div class="ov-stat"><div class="ov-n">2020</div><div class="ov-l">India Cricket Champion — Rishab Saini</div></div>
+</div>
+
+<div class="body">
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 01 &mdash; Executive Summary</p>
+    <h2 class="sec-h rv">Red Bull Doesn't<br>Sponsor Culture.<br>They Manufacture It.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">Red Bull built one of the most dominant sports marketing ecosystems in global business history — not by making a better energy drink, but by making a better <strong>identity for people to belong to.</strong></p>
+        <p class="bt rv">While competitors spent billions on traditional advertising, Red Bull invested in athletes, storytelling, events, and content. The result: a brand so embedded in sports culture that it is virtually impossible to think about extreme sport, action sport, or youth athletic ambition without the Red Bull brand appearing in the mental image.</p>
+        <p class="bt rv">This case study has a personal dimension: <strong>I won the Red Bull Campus Cricket All India Championship 2020</strong> with DAV College Jalandhar, defeating SSJSC Jaipur by 8 runs in the national final at Ekana Cricket Stadium, Lucknow — and qualified to represent India at the Red Bull World Championship. I know the Red Bull brand from the inside of one of its owned events.</p>
+      </div>
+      <div class="rv d2">
+        <div class="pq" style="margin:0;">
+          <p>"Red Bull understood earlier than everyone else: young audiences don't trust advertising anymore — they trust experiences."</p>
+          <cite>Red Bull Brand Research &mdash; Rishab Saini, Full Sail University 2024&ndash;2025</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 02 &mdash; Brand Strategy</p>
+    <h2 class="sec-h rv">Identity First.<br>Product Second.</h2>
+    <div class="grid3 rv">
+      <div class="ic"><div class="il">What Red Bull Markets</div><div class="it">Not product features. Not caffeine content. Not taste. <strong>Emotion. Energy. Ambition. Fearlessness.</strong> The product is secondary to the identity it creates.</div></div>
+      <div class="ic"><div class="il">Consumer Psychology</div><div class="it">Red Bull buyers purchase <strong>identity first, product second.</strong> A Red Bull in hand signals: I am ambitious, athletic, driven, and part of something bigger than a beverage choice.</div></div>
+      <div class="ic"><div class="il">The Slogan</div><div class="it">"Red Bull Gives You Wings" — <strong>emotional positioning, not product communication.</strong> Wings represent freedom, ambition, achievement. Not energy drink benefits.</div></div>
+    </div>
+    <div class="pq rv">
+      <p>"Most brands interrupt sports. Red Bull became the sport. They don't rent attention — they manufacture it, own it, and distribute it globally through athletes who are their best content creators."</p>
+      <cite>Red Bull Brand Research &mdash; Rishab Saini, Full Sail University 2024&ndash;2025</cite>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 03 &mdash; Athlete Marketing</p>
+    <h2 class="sec-h rv">Athletes Are Not<br>Endorsers.<br>They Are the Brand.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">Red Bull's athlete marketing model is fundamentally different from traditional endorsement deals. <strong>Athletes are not paid to hold a can in a photo.</strong> They are treated as storytellers, content creators, lifestyle symbols, and brand ambassadors whose entire career trajectory becomes the campaign.</p>
+        <p class="bt rv">The athlete becomes the content. Their training, their failures, their breakthroughs, their personalities — all of it feeds the Red Bull media ecosystem. This creates authentic storytelling that advertising can never replicate.</p>
+        <p class="bt rv">Red Bull athletes across 600+ individuals and 600 sports maintain their personal brands while operating within the Red Bull ecosystem — creating a network of influence that reaches virtually every youth sporting community globally.</p>
+      </div>
+      <div class="rv d2">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div class="ic"><div class="il">Max Verstappen</div><div class="it">Red Bull Racing F1 World Champion. <strong>The perfect Red Bull athlete narrative</strong> — young, aggressive, dominantly skilled, unafraid of controversy.</div></div>
+          <div class="ic"><div class="il">Shaun White</div><div class="it">Snowboarding legend built entirely within the Red Bull ecosystem. <strong>Red Bull didn't find a star — they helped create one.</strong></div></div>
+          <div class="ic"><div class="il">Cricket Athletes</div><div class="it">Red Bull Campus Cricket produces national champions like myself — but <strong>the athlete storytelling potential in cricket remains massively underutilized.</strong></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 04 &mdash; Event Ownership Strategy</p>
+    <h2 class="sec-h rv">Why Rent Attention<br>When You Can Own<br>The Entire Event?</h2>
+    <div class="grid3 rv">
+      <div class="event-card"><div class="ec-n">Owned Event 01 &mdash;</div><div class="ec-t">Red Bull Rampage</div><div class="ec-d">Mountain bike freeride competition. Full branding control, exclusive media rights, global broadcast. Red Bull doesn't sponsor — it operates.</div></div>
+      <div class="event-card"><div class="ec-n">Owned Event 02 &mdash;</div><div class="ec-t">Red Bull BC One</div><div class="ec-d">World breakdancing championship. Cultural credibility in urban youth markets globally — particularly strong in South Asian and Caribbean communities.</div></div>
+      <div class="event-card"><div class="ec-n">Owned Event 03 &mdash;</div><div class="ec-t">Red Bull Air Race</div><div class="ec-d">Precision aerobatic racing — live spectator events with global broadcast. Premium audience, premium brand perception.</div></div>
+      <div class="event-card"><div class="ec-n">Owned Event 04 &mdash;</div><div class="ec-t">Red Bull Campus Cricket</div><div class="ec-d">National T20 cricket championship for university teams. India, Pakistan, South Africa. Winning team represents their nation internationally. <strong>I won this in 2020.</strong></div></div>
+      <div class="event-card"><div class="ec-n">Owned Event 05 &mdash;</div><div class="ec-t">Red Bull Cliff Diving</div><div class="ec-d">World-class cliff diving at iconic global locations. Spectacular visual content that generates millions of organic views across social media.</div></div>
+      <div class="event-card"><div class="ec-n">Strategic Insight &mdash;</div><div class="ec-t">Ownership vs Sponsorship</div><div class="ec-d"><strong>Full branding control. Exclusive media rights. Deeper fan connection.</strong> Red Bull events are commercial assets, not marketing costs.</div></div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 05 &mdash; Media Company Model</p>
+    <h2 class="sec-h rv">Red Bull Is a<br>Media Company That<br>Sells Energy Drinks.</h2>
+    <div class="grid2">
+      <div>
+        <p class="bt rv">Red Bull Media House is one of the most sophisticated sports content operations in the world — producing documentaries, athlete films, YouTube content, short-form social content, and behind-the-scenes storytelling that keeps audiences emotionally attached to the brand <strong>365 days a year.</strong></p>
+        <p class="bt rv">Traditional brands advertise during events. Red Bull <strong>is the content</strong> — making advertising irrelevant by simply being the most interesting story in any room they enter.</p>
+      </div>
+      <div class="rv d2">
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div class="ic"><div class="il">Content Output</div><div class="it">Documentaries &middot; Athlete films &middot; YouTube originals &middot; Short-form social &middot; Behind-the-scenes storytelling. <strong>Year-round emotional connection.</strong></div></div>
+          <div class="ic"><div class="il">Distribution</div><div class="it">Red Bull TV &middot; YouTube (13M+ subscribers) &middot; Instagram &middot; TikTok &middot; Broadcast partnerships. <strong>Owned distribution, zero dependency on media buyers.</strong></div></div>
+          <div class="ic"><div class="il">Commercial Result</div><div class="it">Audiences stay connected to Red Bull between purchases &mdash; turning a beverage brand into a <strong>lifestyle subscription people opt into daily.</strong></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 06 &mdash; Cricket Expansion Opportunity</p>
+    <h2 class="sec-h rv">Red Bull + Cricket.<br>The Expansion<br>Hiding in Plain Sight.</h2>
+    <div class="cricket-opp rv">
+      <div class="co-tag">Strategic Recommendation</div>
+      <div class="co-title">Red Bull Cricket<br>Expansion Project</div>
+      <div class="co-body">Red Bull already has a foothold in cricket through Campus Cricket. But the brand's presence in the sport relative to its commercial potential is negligible. Cricket is becoming younger, more digital, more entertainment-driven — and this aligns perfectly with Red Bull's brand identity. The opportunity to expand deeper into cricket culture is the single largest untapped brand territory available to Red Bull right now.</div>
+      <div class="co-grid">
+        <div class="co-card"><div class="co-card-t">Creator-Led Cricket Content</div><div class="co-card-d">Red Bull athlete storytelling applied to cricket — documenting elite players' journeys from grassroots to national teams. Authentic content that reaches 2.5B cricket fans.</div></div>
+        <div class="co-card"><div class="co-card-t">Street Cricket Tournaments</div><div class="co-card-d">Urban cricket activations in India, Caribbean, UK — Red Bull BC One model applied to street cricket culture. Own the grassroots scene before competitors notice it.</div></div>
+        <div class="co-card"><div class="co-card-t">India/US Crossover Events</div><div class="co-card-d">Red Bull cricket events connecting the Indian diaspora market in the US to homeland cricket culture — exactly the crossover Red Bull executed in Campus Cricket globally.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <p class="tag rv">Section 07 &mdash; SWOT Analysis</p>
+    <h2 class="sec-h rv">Red Bull Today.</h2>
+    <div class="swot rv">
+      <div class="sw-card s">
+        <div class="sw-title">Strengths</div>
+        <ul class="sw-list">
+          <li>Unmatched athlete branding ecosystem</li>
+          <li>Global youth appeal across 100+ countries</li>
+          <li>Strong owned event portfolio</li>
+          <li>Premium media production capability</li>
+          <li>F1 dominance — championship-winning teams</li>
+        </ul>
+      </div>
+      <div class="sw-card w">
+        <div class="sw-title">Weaknesses</div>
+        <ul class="sw-list">
+          <li style="color:var(--dim);">Dependence on extreme sports identity</li>
+          <li style="color:var(--dim);">High sponsorship and event costs</li>
+          <li style="color:var(--dim);">Cricket presence significantly underscaled</li>
+          <li style="color:var(--dim);">Health perception of energy drinks</li>
+        </ul>
+      </div>
+      <div class="sw-card o">
+        <div class="sw-title">Opportunities</div>
+        <ul class="sw-list">
+          <li>Cricket expansion — 2.5B fans, minimal competition</li>
+          <li>Women's sports investment</li>
+          <li>Creator economy partnerships</li>
+          <li>Immersive digital fan experiences</li>
+          <li>India market deepening</li>
+        </ul>
+      </div>
+      <div class="sw-card t">
+        <div class="sw-title">Threats</div>
+        <ul class="sw-list">
+          <li style="color:var(--dim);">Growing energy drink competition</li>
+          <li style="color:var(--dim);">Athlete controversy risk</li>
+          <li style="color:var(--dim);">Oversaturation in extreme sports</li>
+          <li style="color:var(--dim);">Regulatory challenges on energy drinks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="conclusion">
+  <p class="tag" style="color:rgba(255,255,255,.28);">Research Conclusion</p>
+  <h2 class="sec-h">"Red Bull Built<br>Something Bigger<br>Than a Beverage.<br><em style="color:var(--r);font-style:normal;">They Built a Lifestyle<br>People Want to Belong To."</em></h2>
+  <p>Red Bull's commercial model is the most instructive case study for any sports marketing professional. The lesson: <strong>stop selling products. Start building worlds people want to live in.</strong></p>
+  <p>As a Red Bull Campus Cricket India Champion, I experienced this firsthand. <strong>The brand didn't feel like a sponsor — it felt like the event itself.</strong> That is the commercial holy grail, and Red Bull achieves it consistently across hundreds of events globally.</p>
+  <p>Cricket is the natural next frontier for Red Bull's expansion model. The sport, the audience, the culture, and the commercial infrastructure are all ready. The only thing missing is a brand brave enough to fully commit.</p>
+  <a href="mailto:Rishab102023@gmail.com" class="cta-btn">Discuss This Research &rarr;</a>
+</div>
+
+<div style="padding:18px 80px;border-top:1px solid var(--b);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Rishab Saini &middot; rishabsaini.com</div>
+  <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);">Case Study 05 of 05 &middot; Red Bull Brand Research</div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");obs.unobserve(x.target);}});},{threshold:0.06});
+document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
